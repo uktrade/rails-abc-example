@@ -31,11 +31,15 @@ module OmniAuth
 
       def raw_info
         puts '/api/v1/user/me/?access_token='+access_token.token
-        @raw_info ||= access_token.get('/api/v1/user/me/?access_token='+access_token.token).parsed
+        @raw_info ||= access_token.get('/api/v1/user/me/').parsed
       end
 
       def callback_url
         ENV.fetch('DITSSO_CALLBACK_URL', full_host + script_name + callback_path)
+      end
+
+      def full_host 
+        "http://hoopla.com/"
       end
     end
   end

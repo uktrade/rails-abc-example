@@ -1,8 +1,6 @@
 class SessionsController < ApplicationController
   def create
     @details = auth_hash
-    #require 'pry'
-    #binding.pry
   end
 
   protected
