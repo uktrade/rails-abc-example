@@ -37,10 +37,6 @@ module OmniAuth
       def callback_url
         ENV.fetch('DITSSO_CALLBACK_URL', full_host + script_name + callback_path)
       end
-
-      def full_host 
-        "http://hoopla.com/"
-      end
     end
   end
 end
